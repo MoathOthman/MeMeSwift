@@ -25,6 +25,7 @@ class MeMeEditorViewController: UIViewController, UIImagePickerControllerDelegat
 
     @IBAction func dismissViewController(sender: UIBarButtonItem) {
         self.dismissViewController(sender)
+        save()
     }
     @IBAction func shareImage(sender: UIBarButtonItem) {
 
@@ -33,8 +34,6 @@ class MeMeEditorViewController: UIViewController, UIImagePickerControllerDelegat
     override func viewDidLoad() {
         super.viewDidLoad()
         cameraButton.enabled = UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera)
-
-        // Do any additional setup after loading the view.
     }
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
@@ -74,8 +73,10 @@ class MeMeEditorViewController: UIViewController, UIImagePickerControllerDelegat
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
             imageView.image = image
-            self.dismissViewControllerAnimated(true, completion: nil)
-            save()
+
+            self.dismissViewControllerAnimated(true, completion: { () -> Void in
+            })
+
         }
     }
 
@@ -131,7 +132,7 @@ class MeMeEditorViewController: UIViewController, UIImagePickerControllerDelegat
 
     func generateMemedImage() -> UIImage {
         // TODO: Hide toolbar and navbar
-
+        hideNavAndToolBars()
         // render view to an image
         UIGraphicsBeginImageContext(self.view.bounds.size)
         self.view.drawViewHierarchyInRect(self.view.bounds, afterScreenUpdates: true)
@@ -139,6 +140,7 @@ class MeMeEditorViewController: UIViewController, UIImagePickerControllerDelegat
         UIGraphicsEndImageContext()
 
         // TODO:  Show toolbar and navbar
+        showNavAndToolBars()
         return memedImage
     }
 

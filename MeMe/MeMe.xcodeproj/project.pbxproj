@@ -16,6 +16,8 @@
 		EC4489181AD961E600B84111 /* MeMeEditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4489171AD961E600B84111 /* MeMeEditorViewController.swift */; };
 		EC765F1B1AD9696C0058D1A1 /* MeMe.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC765F1A1AD9696C0058D1A1 /* MeMe.swift */; };
 		EC765F1D1AD96D9B0058D1A1 /* SentMemeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC765F1C1AD96D9B0058D1A1 /* SentMemeViewController.swift */; };
+		EC90CF191ADA25CF0008299D /* EditerTextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC90CF181ADA25CF0008299D /* EditerTextFieldDelegate.swift */; };
+		EC90CF1B1ADA2B790008299D /* MeMeEditorTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC90CF1A1ADA2B790008299D /* MeMeEditorTextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +44,8 @@
 		EC4489171AD961E600B84111 /* MeMeEditorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeMeEditorViewController.swift; sourceTree = "<group>"; };
 		EC765F1A1AD9696C0058D1A1 /* MeMe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeMe.swift; sourceTree = "<group>"; };
 		EC765F1C1AD96D9B0058D1A1 /* SentMemeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SentMemeViewController.swift; sourceTree = "<group>"; };
+		EC90CF181ADA25CF0008299D /* EditerTextFieldDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditerTextFieldDelegate.swift; sourceTree = "<group>"; };
+		EC90CF1A1ADA2B790008299D /* MeMeEditorTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeMeEditorTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +90,8 @@
 				EC4488F71AD95A5900B84111 /* AppDelegate.swift */,
 				EC4488F91AD95A5900B84111 /* ViewController.swift */,
 				EC4489171AD961E600B84111 /* MeMeEditorViewController.swift */,
+				EC90CF181ADA25CF0008299D /* EditerTextFieldDelegate.swift */,
+				EC90CF1A1ADA2B790008299D /* MeMeEditorTextField.swift */,
 				EC765F1C1AD96D9B0058D1A1 /* SentMemeViewController.swift */,
 				EC765F1A1AD9696C0058D1A1 /* MeMe.swift */,
 				EC4488FB1AD95A5900B84111 /* Main.storyboard */,
@@ -222,6 +228,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				EC4488FA1AD95A5900B84111 /* ViewController.swift in Sources */,
+				EC90CF191ADA25CF0008299D /* EditerTextFieldDelegate.swift in Sources */,
+				EC90CF1B1ADA2B790008299D /* MeMeEditorTextField.swift in Sources */,
 				EC765F1B1AD9696C0058D1A1 /* MeMe.swift in Sources */,
 				EC765F1D1AD96D9B0058D1A1 /* SentMemeViewController.swift in Sources */,
 				EC4489181AD961E600B84111 /* MeMeEditorViewController.swift in Sources */,
