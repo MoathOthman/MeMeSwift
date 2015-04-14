@@ -20,17 +20,29 @@ class MeMeEditorTextField: UITextField,UITextFieldDelegate {
 
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+        setupTextAttributes()
+        self.delegate = self
+    }
+    func setupTextAttributes() {
+
+        var paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.alignment = NSTextAlignment.Center
+
         let memeTextAttributes = [
             NSStrokeColorAttributeName : UIColor.blackColor() ,
-            NSForegroundColorAttributeName : UIColor.orangeColor(),             NSFontAttributeName : UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!,
-            NSStrokeWidthAttributeName : 1,
+            NSForegroundColorAttributeName : UIColor.orangeColor(),
+            NSFontAttributeName : UIFont(name: "HelveticaNeue-CondensedBlack", size: 36)!,
+            NSStrokeWidthAttributeName : 4,
+            NSParagraphStyleAttributeName : paragraphStyle
         ]
 
         self.defaultTextAttributes = memeTextAttributes
-        self.delegate = self
     }
 
+    func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
 
+        return true
+    }
     func textFieldDidBeginEditing(textField: UITextField) {
         if textField.text == "TOP" || textField.text == "BOTTOM" {
             //bottom
@@ -39,6 +51,16 @@ class MeMeEditorTextField: UITextField,UITextFieldDelegate {
         }
     }
     func textFieldShouldReturn(textField: UITextField) -> Bool {
+        if textField.text == ""  {
+            if textField.tag == 1 {
+                textField.text = "TOP"
+            }else {
+                textField.text = "BOTTOM"
+
+            }
+            //bottom
+
+        }
         textField.resignFirstResponder()
         return true
     }

@@ -45,21 +45,21 @@
                                             <outletCollection property="gestureRecognizers" destination="esl-8R-7SC" appends="YES" id="99P-11-ncP"/>
                                         </connections>
                                     </imageView>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="TOP" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eIp-iy-EV1" customClass="MeMeEditorTextField" customModule="MeMe" customModuleProvider="target">
-                                        <rect key="frame" x="16" y="64" width="288" height="30"/>
+                                    <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="TOP" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eIp-iy-EV1" customClass="MeMeEditorTextField" customModule="MeMe" customModuleProvider="target">
+                                        <rect key="frame" x="16" y="64" width="288" height="50"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="bhc-a0-X26"/>
+                                            <constraint firstAttribute="height" constant="50" id="bhc-a0-X26"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="BOTTOM" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4w0-ld-ij6" customClass="MeMeEditorTextField" customModule="MeMe" customModuleProvider="target">
-                                        <rect key="frame" x="16" y="474" width="288" height="30"/>
+                                        <rect key="frame" x="16" y="454" width="288" height="50"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="Z1P-Gg-Igp"/>
+                                            <constraint firstAttribute="height" constant="50" id="Z1P-Gg-Igp"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                                     </textField>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -107,7 +107,7 @@
                                     <navigationItem title="Image Editor" id="hrU-bt-7DT">
                                         <barButtonItem key="leftBarButtonItem" systemItem="action" id="lKZ-Vp-Wys">
                                             <connections>
-                                                <action selector="shareImage:" destination="kF8-Vg-RUW" id="PXd-bc-2El"/>
+                                                <action selector="letsShareTheImage:" destination="kF8-Vg-RUW" id="yay-C2-4Fb"/>
                                             </connections>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" title="Cancel" id="wdk-U1-wtH">
@@ -145,6 +145,7 @@
                         <outlet property="containerToTopConstraint" destination="3Cd-sV-Eky" id="aNh-Y2-14c"/>
                         <outlet property="imageView" destination="CIs-Si-8UF" id="7Dn-UN-mJi"/>
                         <outlet property="memeContainerView" destination="COh-Vs-gKi" id="M99-bq-Efs"/>
+                        <outlet property="shareButtonItem" destination="lKZ-Vp-Wys" id="1MA-7o-7pd"/>
                         <outlet property="upperNavBar" destination="GjY-6J-KVW" id="DG6-S1-2wV"/>
                         <outlet property="upperTextField" destination="eIp-iy-EV1" id="nyp-F0-EkA"/>
                     </connections>

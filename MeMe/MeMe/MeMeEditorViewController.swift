@@ -21,6 +21,7 @@ class MeMeEditorViewController: UIViewController, UIImagePickerControllerDelegat
     @IBOutlet weak var memeContainerView: UIView!
     @IBOutlet weak var bottomToolBar: UIToolbar!
     @IBOutlet weak var upperNavBar: UINavigationBar!
+    @IBOutlet weak var shareButtonItem: UIBarButtonItem!
 
 
     @IBAction func dismissViewController(sender: UIBarButtonItem) {
@@ -122,9 +123,9 @@ class MeMeEditorViewController: UIViewController, UIImagePickerControllerDelegat
 
     //MARK: - The After Math
 
-    func save() {
+    func save()  {
         //Create the meme
-        var meme = MeMe(text: bottomtextField.text!, image: imageView.image!, memedImage: generateMemedImage())
+        var meme = MeMe(bottomText: self.bottomtextField.text?,topText:self.upperTextField.text?, image: self.imageView.image!, memedImage: self.generateMemedImage())
         // Add it to the memes array in the Application Delegate
         (UIApplication.sharedApplication().delegate as
             AppDelegate).memes.append(meme)
@@ -162,6 +163,15 @@ class MeMeEditorViewController: UIViewController, UIImagePickerControllerDelegat
     func hideNavAndToolBars() {
         upperNavBar.hidden = true
         bottomToolBar.hidden = true
+    }
+    @IBAction func letsShareTheImage(sender: UIBarButtonItem) {
+        var activity = UIActivityViewController(activityItems: [generateMemedImage()], applicationActivities: nil )
+        activity.completionHandler = { s , l in
+            self.save()
+        }
+        self.presentViewController(activity, animated: true) { () -> Void in
+
+        }
     }
     func showNavAndToolBars() {
         upperNavBar.hidden = false
