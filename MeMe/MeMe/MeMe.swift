@@ -9,10 +9,22 @@
 import UIKit
 
 struct MeMe {
-    var bottomText: String?
-    var topText: String?
-    var image: UIImage
+    private  var bottomText: String?
+    private  var topText: String?
+    var image: UIImage?
     var memedImage: UIImage
+    var text: String? {
+        get {
+            return bottomText! + "," + topText!
+        }
+    }
+    init(bottomText: String?,topText: String? , image : UIImage?, memedImage: UIImage) {
 
+        self.bottomText = bottomText
+        self.topText    = topText
+        self.image      = image
+        self.memedImage = memedImage
+
+    }
 }
 
