@@ -129,6 +129,7 @@ class MeMeEditorViewController: UIViewController, UIImagePickerControllerDelegat
         // Add it to the memes array in the Application Delegate
         (UIApplication.sharedApplication().delegate as
             AppDelegate).memes.append(meme)
+        MeMes.memes.append(meme)
     }
 
     func generateMemedImage() -> UIImage {

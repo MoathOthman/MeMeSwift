@@ -18,13 +18,7 @@ class SentMeMeTableViewController: UITableViewController {
     }
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-
-        let object = UIApplication.sharedApplication().delegate as AppDelegate
-        let appDelegate = object as AppDelegate
-        memes = appDelegate.memes
-        print("memesare \(memes)")
-        self.tableView.reloadData()
-
+        memes = MeMes.memes
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

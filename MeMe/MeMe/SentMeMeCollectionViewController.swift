@@ -20,13 +20,7 @@ class SentMeMeCollectionViewController: UICollectionViewController {
     }
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-
-        let object = UIApplication.sharedApplication().delegate as AppDelegate
-        let appDelegate = object as AppDelegate
-        memes = appDelegate.memes
-        print("memesare \(memes)")
-        self.collectionView?.reloadData()
-
+        memes = MeMes.memes
     }
 
 

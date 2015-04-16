@@ -28,3 +28,6 @@ struct MeMe {
     }
 }
 
+struct   MeMes {
+   static var memes = [MeMe]()
+}
