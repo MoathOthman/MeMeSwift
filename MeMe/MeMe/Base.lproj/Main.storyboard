@@ -146,6 +146,7 @@
         <scene sceneID="UQL-bj-M8m">
             <objects>
                 <tabBarController id="cyL-Mx-QRi" sceneMemberID="viewController">
+                    <nil key="simulatedStatusBarMetrics"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="dVp-db-Upb">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
@@ -200,6 +201,7 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <nil key="simulatedStatusBarMetrics"/>
                     <connections>
                         <segue destination="OP8-dH-rMX" kind="push" identifier="notused(for illustrationpurpose)" id="drH-dr-33Q"/>
                     </connections>
@@ -236,6 +238,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="dW8-4e-x09"/>
+                    <nil key="simulatedStatusBarMetrics"/>
                     <connections>
                         <outlet property="imageView" destination="Mbc-7B-LrA" id="D6a-2O-JS5"/>
                     </connections>
@@ -249,6 +252,7 @@
             <objects>
                 <navigationController id="ckL-C3-PpV" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" image="collection" id="dxo-4x-Yi2"/>
+                    <nil key="simulatedStatusBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="krD-7D-3WO">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -321,6 +325,7 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <nil key="simulatedStatusBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <segue destination="OP8-dH-rMX" kind="push" identifier="notused(for illustration purpose)" id="cWD-iw-4VX"/>
@@ -335,6 +340,7 @@
             <objects>
                 <navigationController id="v1u-ta-GmT" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" image="table_30x30" id="mkG-14-urC"/>
+                    <nil key="simulatedStatusBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="eCL-PF-grc">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -358,7 +364,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="pie-bj-qhw"/>
-        <segue reference="cWD-iw-4VX"/>
+        <segue reference="Qwb-9y-QAo"/>
+        <segue reference="drH-dr-33Q"/>
     </inferredMetricsTieBreakers>
 </document>

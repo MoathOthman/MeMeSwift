@@ -22,11 +22,11 @@ class MeMeEditorViewController: UIViewController, UIImagePickerControllerDelegat
     @IBOutlet weak var bottomToolBar: UIToolbar!
     @IBOutlet weak var upperNavBar: UINavigationBar!
     @IBOutlet weak var shareButtonItem: UIBarButtonItem!
+    var imagePicker = UIImagePickerController()
 
 
     @IBAction func dismissViewController(sender: UIBarButtonItem) {
         self.dismissViewController(sender)
-        save()
     }
     @IBAction func shareImage(sender: UIBarButtonItem) {
 
@@ -35,6 +35,7 @@ class MeMeEditorViewController: UIViewController, UIImagePickerControllerDelegat
     override func viewDidLoad() {
         super.viewDidLoad()
         cameraButton.enabled = UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera)
+        imagePicker.delegate = self
     }
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
@@ -56,17 +57,11 @@ class MeMeEditorViewController: UIViewController, UIImagePickerControllerDelegat
 
     //MARK: - Image Picking Action Methods
     @IBAction func pickAnImageFromAlbum (sender: AnyObject) {
-        let imagePicker = UIImagePickerController()
-        imagePicker.delegate = self
         imagePicker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
-
         self.presentViewController(imagePicker, animated: true, completion: nil)
     }
     @IBAction func pickAnImageFromCamera (sender: AnyObject) {
-        let imagePicker = UIImagePickerController()
-        imagePicker.delegate = self
         imagePicker.sourceType = UIImagePickerControllerSourceType.Camera
-
         self.presentViewController(imagePicker, animated: true, completion: nil)
     }
 
@@ -74,11 +69,12 @@ class MeMeEditorViewController: UIViewController, UIImagePickerControllerDelegat
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
             imageView.image = image
-
             self.dismissViewControllerAnimated(true, completion: { () -> Void in
             })
 
         }
+        UIApplication.sharedApplication().statusBarHidden = true
+
     }
 
 
@@ -119,29 +115,21 @@ class MeMeEditorViewController: UIViewController, UIImagePickerControllerDelegat
     }
 
 
-
-
     //MARK: - The After Math
 
     func save()  {
         //Create the meme
         var meme = MeMe(bottomText: self.bottomtextField.text?,topText:self.upperTextField.text?, image: self.imageView.image?, memedImage: self.generateMemedImage())
-        // Add it to the memes array in the Application Delegate
-        (UIApplication.sharedApplication().delegate as
-            AppDelegate).memes.append(meme)
         MeMes.memes.append(meme)
     }
 
     func generateMemedImage() -> UIImage {
-        // TODO: Hide toolbar and navbar
         hideNavAndToolBars()
         // render view to an image
         UIGraphicsBeginImageContext(self.view.bounds.size)
         self.view.drawViewHierarchyInRect(self.view.bounds, afterScreenUpdates: true)
         let memedImage : UIImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
-
-        // TODO:  Show toolbar and navbar
         showNavAndToolBars()
         return memedImage
     }
@@ -165,6 +153,11 @@ class MeMeEditorViewController: UIViewController, UIImagePickerControllerDelegat
         upperNavBar.hidden = true
         bottomToolBar.hidden = true
     }
+    func showNavAndToolBars() {
+        upperNavBar.hidden = false
+        bottomToolBar.hidden = false
+    }
+
     @IBAction func letsShareTheImage(sender: UIBarButtonItem) {
         var activity = UIActivityViewController(activityItems: [generateMemedImage()], applicationActivities: nil )
         activity.completionHandler = { s , l in
@@ -174,9 +167,11 @@ class MeMeEditorViewController: UIViewController, UIImagePickerControllerDelegat
 
         }
     }
-    func showNavAndToolBars() {
-        upperNavBar.hidden = false
-        bottomToolBar.hidden = false
+
+    //MARK: navigationDelegate
+    func navigationController(navigationController: UINavigationController, willShowViewController viewController: UIViewController, animated: Bool) {
+        UIApplication.sharedApplication().statusBarHidden = true
+        //solve the issue where status bar shows again after calling image picker
     }
 
 

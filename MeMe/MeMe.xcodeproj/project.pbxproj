@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		EC4488F81AD95A5900B84111 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4488F71AD95A5900B84111 /* AppDelegate.swift */; };
-		EC4488FA1AD95A5900B84111 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4488F91AD95A5900B84111 /* ViewController.swift */; };
 		EC4488FD1AD95A5900B84111 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC4488FB1AD95A5900B84111 /* Main.storyboard */; };
 		EC4488FF1AD95A5900B84111 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC4488FE1AD95A5900B84111 /* Images.xcassets */; };
 		EC4489021AD95A5900B84111 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC4489001AD95A5900B84111 /* LaunchScreen.xib */; };
@@ -35,7 +34,6 @@
 		EC4488F21AD95A5900B84111 /* MeMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MeMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC4488F61AD95A5900B84111 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EC4488F71AD95A5900B84111 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		EC4488F91AD95A5900B84111 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		EC4488FC1AD95A5900B84111 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EC4488FE1AD95A5900B84111 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		EC4489011AD95A5900B84111 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -90,7 +88,6 @@
 			isa = PBXGroup;
 			children = (
 				EC4488F71AD95A5900B84111 /* AppDelegate.swift */,
-				EC4488F91AD95A5900B84111 /* ViewController.swift */,
 				EC4489171AD961E600B84111 /* MeMeEditorViewController.swift */,
 				EC90CF1A1ADA2B790008299D /* MeMeEditorTextField.swift */,
 				ECE3692D1ADDDBDD00F97270 /* SentMeMeTableViewController.swift */,
@@ -231,7 +228,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				ECF4AC3E1ADFB7140032D04F /* DetailViewController.swift in Sources */,
-				EC4488FA1AD95A5900B84111 /* ViewController.swift in Sources */,
 				EC90CF1B1ADA2B790008299D /* MeMeEditorTextField.swift in Sources */,
 				ECE369301ADDDBF000F97270 /* SentMeMeCollectionViewController.swift in Sources */,
 				EC765F1B1AD9696C0058D1A1 /* MeMe.swift in Sources */,
