@@ -6,9 +6,14 @@
 //  Copyright (c) 2015 Moba. All rights reserved.
 //
 
+struct  TexTConstants {
+    static var TOP = "TOP"
+    static var BOTTOM = "BOTTOM"
+    static var NONE = ""
+}
 import UIKit
 
-class MeMeEditorTextField: UITextField,UITextFieldDelegate {
+@IBDesignable class MeMeEditorTextField: UITextField,UITextFieldDelegate {
 
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -21,11 +26,11 @@ class MeMeEditorTextField: UITextField,UITextFieldDelegate {
         paragraphStyle.alignment = NSTextAlignment.Center
 
         let memeTextAttributes = [
+            NSParagraphStyleAttributeName : paragraphStyle,
             NSStrokeColorAttributeName : UIColor.blackColor() ,
             NSForegroundColorAttributeName : UIColor.whiteColor(),
             NSFontAttributeName : UIFont(name: "HelveticaNeue-CondensedBlack", size: 36)!,
-            NSStrokeWidthAttributeName : 4,
-            NSParagraphStyleAttributeName : paragraphStyle
+            NSStrokeWidthAttributeName : -4,
         ]
 
         self.defaultTextAttributes = memeTextAttributes
@@ -36,18 +41,18 @@ class MeMeEditorTextField: UITextField,UITextFieldDelegate {
         return true
     }
     func textFieldDidBeginEditing(textField: UITextField) {
-        if textField.text == "TOP" || textField.text == "BOTTOM" {
+        if textField.text == TexTConstants.TOP || textField.text == TexTConstants.BOTTOM {
             //bottom
-            textField.text = ""
+            textField.text = TexTConstants.NONE
 
         }
     }
     func textFieldShouldReturn(textField: UITextField) -> Bool {
-        if textField.text == ""  {
+        if textField.text == TexTConstants.NONE  {
             if textField.tag == 1 {
-                textField.text = "TOP"
+                textField.text = TexTConstants.TOP
             }else {
-                textField.text = "BOTTOM"
+                textField.text = TexTConstants.BOTTOM
 
             }
             //bottom
@@ -56,5 +61,8 @@ class MeMeEditorTextField: UITextField,UITextFieldDelegate {
         textField.resignFirstResponder()
         return true
     }
+
+
+
 
 }

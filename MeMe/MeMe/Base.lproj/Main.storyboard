@@ -27,20 +27,36 @@
                                             <outletCollection property="gestureRecognizers" destination="esl-8R-7SC" appends="YES" id="99P-11-ncP"/>
                                         </connections>
                                     </imageView>
-                                    <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="TOP" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eIp-iy-EV1" customClass="MeMeEditorTextField" customModule="MeMe" customModuleProvider="target">
+                                    <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eIp-iy-EV1" customClass="MeMeEditorTextField" customModule="MeMe" customModuleProvider="target">
                                         <rect key="frame" x="16" y="64" width="288" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="bhc-a0-X26"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <attributedString key="attributedText">
+                                            <fragment content="TOP">
+                                                <attributes>
+                                                    <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <font key="NSFont" size="36" name="HelveticaNeue-CondensedBold"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="BOTTOM" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4w0-ld-ij6" customClass="MeMeEditorTextField" customModule="MeMe" customModuleProvider="target">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4w0-ld-ij6" customClass="MeMeEditorTextField" customModule="MeMe" customModuleProvider="target">
                                         <rect key="frame" x="16" y="454" width="288" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="Z1P-Gg-Igp"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <attributedString key="attributedText">
+                                            <fragment content="BOTTOM">
+                                                <attributes>
+                                                    <color key="NSColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                                     </textField>
                                 </subviews>
@@ -184,6 +200,7 @@
                                         </label>
                                         <imageView userInteractionEnabled="NO" tag="2" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="w9B-8U-4PH">
                                             <rect key="frame" x="0.0" y="0.0" width="162" height="106"/>
+                                            <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         </imageView>
                                     </subviews>
                                 </tableViewCellContentView>
@@ -223,22 +240,20 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Mbc-7B-LrA">
-                                <rect key="frame" x="0.0" y="156" width="320" height="256"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="256" id="1LO-dy-yXj"/>
-                                </constraints>
+                                <rect key="frame" x="0.0" y="44" width="320" height="524"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="centerX" secondItem="Mbc-7B-LrA" secondAttribute="centerX" id="KmI-0Q-zTy"/>
-                            <constraint firstAttribute="centerY" secondItem="Mbc-7B-LrA" secondAttribute="centerY" id="b2K-q4-LwV"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Mbc-7B-LrA" secondAttribute="trailing" constant="-16" id="fgx-0z-mNd"/>
-                            <constraint firstItem="Mbc-7B-LrA" firstAttribute="leading" secondItem="q9k-kg-j98" secondAttribute="leadingMargin" constant="-16" id="tBl-Gf-5Nc"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Mbc-7B-LrA" secondAttribute="trailing" constant="-16" id="J3u-O4-J17"/>
+                            <constraint firstItem="Mbc-7B-LrA" firstAttribute="leading" secondItem="q9k-kg-j98" secondAttribute="leadingMargin" constant="-16" id="frM-fU-ODR"/>
+                            <constraint firstItem="PZ9-fg-cdO" firstAttribute="top" secondItem="Mbc-7B-LrA" secondAttribute="bottom" id="pyB-kg-c8f"/>
+                            <constraint firstItem="Mbc-7B-LrA" firstAttribute="top" secondItem="7Jy-cs-4Zd" secondAttribute="bottom" id="vi9-YF-I8w"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="dW8-4e-x09"/>
                     <nil key="simulatedStatusBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="imageView" destination="Mbc-7B-LrA" id="D6a-2O-JS5"/>
                     </connections>
@@ -293,6 +308,7 @@
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                             </collectionViewCell>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="notused1" id="NtC-cr-Ceb">
                                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
