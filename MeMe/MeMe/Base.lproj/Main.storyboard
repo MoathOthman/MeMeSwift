@@ -158,7 +158,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="231" y="1029"/>
+            <point key="canvasLocation" x="798" y="463"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="UQL-bj-M8m">
@@ -177,7 +177,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nNv-33-7Ee" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="231" y="1745"/>
+            <point key="canvasLocation" x="179" y="1668"/>
         </scene>
         <!--Sent Memes-->
         <scene sceneID="BdF-CN-kQt">
@@ -188,7 +188,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MemeCell" rowHeight="106" id="N3w-nJ-OuW">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="MemeCell" rowHeight="106" id="N3w-nJ-OuW">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="N3w-nJ-OuW" id="eTj-2J-qMI">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -212,12 +212,55 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Sent Memes" id="mqA-e8-vn6">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Jf8-fv-TOn"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Jf8-fv-TOn">
+                            <connections>
+                                <segue destination="kF8-Vg-RUW" kind="modal" id="Qwb-9y-QAo"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="OP8-dH-rMX" kind="push" identifier="notused(for illustrationpurpose)" id="drH-dr-33Q"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="69y-0q-1bd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1149" y="2400"/>
+        </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="kGB-rT-FJX">
+            <objects>
+                <viewController storyboardIdentifier="DetailViewController" id="OP8-dH-rMX" customClass="DetailViewController" customModule="MeMe" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="7Jy-cs-4Zd"/>
+                        <viewControllerLayoutGuide type="bottom" id="PZ9-fg-cdO"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="q9k-kg-j98">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Mbc-7B-LrA">
+                                <rect key="frame" x="0.0" y="157" width="320" height="256"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="256" id="1LO-dy-yXj"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="Mbc-7B-LrA" secondAttribute="centerX" id="KmI-0Q-zTy"/>
+                            <constraint firstAttribute="centerY" secondItem="Mbc-7B-LrA" secondAttribute="centerY" id="b2K-q4-LwV"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Mbc-7B-LrA" secondAttribute="trailing" constant="-16" id="fgx-0z-mNd"/>
+                            <constraint firstItem="Mbc-7B-LrA" firstAttribute="leading" secondItem="q9k-kg-j98" secondAttribute="leadingMargin" constant="-16" id="tBl-Gf-5Nc"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="dW8-4e-x09"/>
+                    <connections>
+                        <outlet property="imageView" destination="Mbc-7B-LrA" id="D6a-2O-JS5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XZX-Wv-4R5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2012" y="2024"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="FA3-J3-vJf">
@@ -241,7 +284,7 @@
             <objects>
                 <collectionViewController storyboardIdentifier="SentMeMeCollectionViewController" id="xBp-XH-Wcu" customClass="SentMeMeCollectionViewController" customModule="MeMe" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="VoK-nw-Hhc">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="0.0" id="pVI-tc-vpE">
@@ -290,13 +333,20 @@
                         </connections>
                     </collectionView>
                     <navigationItem key="navigationItem" title="Sent Memes" id="eNw-5X-5y5">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Fb6-5k-Kvk"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Fb6-5k-Kvk">
+                            <connections>
+                                <segue destination="kF8-Vg-RUW" kind="modal" id="pie-bj-qhw"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <segue destination="OP8-dH-rMX" kind="push" identifier="notused(for illustration purpose)" id="cWD-iw-4VX"/>
+                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qn4-UC-JQ1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1177" y="1668"/>
+            <point key="canvasLocation" x="1165" y="1668"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="MQK-eS-sI5">
@@ -313,7 +363,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wzJ-H6-OFL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="680" y="2410"/>
+            <point key="canvasLocation" x="680" y="2400"/>
         </scene>
     </scenes>
     <resources>
@@ -325,4 +375,8 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="pie-bj-qhw"/>
+        <segue reference="cWD-iw-4VX"/>
+    </inferredMetricsTieBreakers>
 </document>

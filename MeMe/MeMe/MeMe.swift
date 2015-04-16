@@ -13,7 +13,7 @@ struct MeMe {
     private  var topText: String?
     var image: UIImage?
     var memedImage: UIImage
-    var text: String? {
+    var text: String {
         get {
             return bottomText! + "," + topText!
         }

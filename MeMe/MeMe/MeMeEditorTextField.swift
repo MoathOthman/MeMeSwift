@@ -30,7 +30,7 @@ class MeMeEditorTextField: UITextField,UITextFieldDelegate {
 
         let memeTextAttributes = [
             NSStrokeColorAttributeName : UIColor.blackColor() ,
-            NSForegroundColorAttributeName : UIColor.orangeColor(),
+            NSForegroundColorAttributeName : UIColor.whiteColor(),
             NSFontAttributeName : UIFont(name: "HelveticaNeue-CondensedBlack", size: 36)!,
             NSStrokeWidthAttributeName : 4,
             NSParagraphStyleAttributeName : paragraphStyle
