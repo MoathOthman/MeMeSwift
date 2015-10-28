@@ -15,14 +15,14 @@ import UIKit
 
 @IBDesignable class MeMeEditorTextField: UITextField,UITextFieldDelegate {
 
-    required init(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         setupTextAttributes()
         self.delegate = self
     }
     func setupTextAttributes() {
 
-        var paragraphStyle = NSMutableParagraphStyle()
+        let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.alignment = NSTextAlignment.Center
 
         let memeTextAttributes = [

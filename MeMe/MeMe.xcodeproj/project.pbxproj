@@ -171,6 +171,8 @@
 		EC4488EA1AD95A5900B84111 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftMigration = 0710;
+				LastSwiftUpdateCheck = 0710;
 				LastUpgradeCheck = 0620;
 				ORGANIZATIONNAME = Moba;
 				TargetAttributes = {

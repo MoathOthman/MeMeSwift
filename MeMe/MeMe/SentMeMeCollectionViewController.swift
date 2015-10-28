@@ -35,8 +35,8 @@ class SentMeMeCollectionViewController: UICollectionViewController {
 
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as UICollectionViewCell
-        var imageView = cell.contentView.viewWithTag(2) as UIImageView
-        var _meme     = memes[indexPath.row] as MeMe
+        let imageView = cell.contentView.viewWithTag(2) as! UIImageView
+        let _meme     = memes[indexPath.row] as MeMe
         imageView.image = _meme.memedImage
         // Configure the cell
 
@@ -45,9 +45,9 @@ class SentMeMeCollectionViewController: UICollectionViewController {
 
     // MARK: UICollectionViewDelegate
     override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        var _meme     = memes[indexPath.row] as MeMe
-        var imageToBePassed = _meme.memedImage
-        var detailViewController = self.storyboard?.instantiateViewControllerWithIdentifier("DetailViewController") as DetailViewController
+        let _meme     = memes[indexPath.row] as MeMe
+        let imageToBePassed = _meme.memedImage
+        let detailViewController = self.storyboard?.instantiateViewControllerWithIdentifier("DetailViewController") as! DetailViewController
         detailViewController.image = imageToBePassed
 
         self.navigationController?.pushViewController(detailViewController, animated: true)

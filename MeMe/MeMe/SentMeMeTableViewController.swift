@@ -29,9 +29,9 @@ class SentMeMeTableViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("MemeCell", forIndexPath: indexPath) as UITableViewCell
-        var imageView   = cell.contentView.viewWithTag(2) as UIImageView
-        var memedText   = cell.contentView.viewWithTag(1) as UILabel
-        var _meme       = memes[indexPath.row] as MeMe
+        let imageView   = cell.contentView.viewWithTag(2) as! UIImageView
+        let memedText   = cell.contentView.viewWithTag(1) as! UILabel
+        let _meme       = memes[indexPath.row] as MeMe
         imageView.image = _meme.memedImage
         memedText.text  = _meme.text
 
@@ -39,9 +39,9 @@ class SentMeMeTableViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        var _meme           = memes[indexPath.row] as MeMe
-        var imageToBePassed = _meme.memedImage
-        var detailViewController    = self.storyboard?.instantiateViewControllerWithIdentifier("DetailViewController") as DetailViewController
+        let _meme           = memes[indexPath.row] as MeMe
+        let imageToBePassed = _meme.memedImage
+        let detailViewController    = self.storyboard?.instantiateViewControllerWithIdentifier("DetailViewController") as! DetailViewController
         detailViewController.image  = imageToBePassed
 
         self.navigationController?.pushViewController(detailViewController, animated: true)

@@ -66,7 +66,7 @@ class MeMeEditorViewController: UIViewController, UIImagePickerControllerDelegat
     }
 
     //MARK: - ImagePickerDelegate Methods
-    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
             imageView.image = image
             self.dismissViewControllerAnimated(true, completion: { () -> Void in
@@ -82,7 +82,7 @@ class MeMeEditorViewController: UIViewController, UIImagePickerControllerDelegat
 
     func keyboardWillShow(notification: NSNotification) {
         if bottomtextField.isFirstResponder() {
-            var shiftUp = getKeyboardHeight(notification)
+            let shiftUp = getKeyboardHeight(notification)
             containerToTopConstraint.constant = -shiftUp
             containerToBottomConstraint.constant = shiftUp
             UIView.animateWithDuration(0.25, animations: { () -> Void in
@@ -110,7 +110,7 @@ class MeMeEditorViewController: UIViewController, UIImagePickerControllerDelegat
     }
     func getKeyboardHeight(notification: NSNotification) -> CGFloat {
         let userInfo = notification.userInfo
-        let keyboardSize = userInfo![UIKeyboardFrameEndUserInfoKey] as NSValue // of CGRect
+        let keyboardSize = userInfo![UIKeyboardFrameEndUserInfoKey] as! NSValue // of CGRect
         return keyboardSize.CGRectValue().height
     }
 
@@ -119,7 +119,7 @@ class MeMeEditorViewController: UIViewController, UIImagePickerControllerDelegat
 
     func save()  {
         //Create the meme
-        var meme = MeMe(bottomText: self.bottomtextField.text?,topText:self.upperTextField.text?, image: self.imageView.image?, memedImage: self.generateMemedImage())
+        let meme = MeMe(bottomText: self.bottomtextField.text,topText:self.upperTextField.text, image: self.imageView.image, memedImage: self.generateMemedImage())
         MeMes.memes.append(meme)
     }
 
@@ -159,7 +159,7 @@ class MeMeEditorViewController: UIViewController, UIImagePickerControllerDelegat
     }
 
     @IBAction func letsShareTheImage(sender: UIBarButtonItem) {
-        var activity = UIActivityViewController(activityItems: [generateMemedImage()], applicationActivities: nil )
+        let activity = UIActivityViewController(activityItems: [generateMemedImage()], applicationActivities: nil )
         activity.completionHandler = { s , l in
             self.save()
         }
